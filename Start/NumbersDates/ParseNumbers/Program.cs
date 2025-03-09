@@ -1,7 +1,7 @@
 ﻿// LinkedIn Learning Course .NET Programming with C# by Joe Marini
 // Example file for parsing numerical data from strings
 
-string[] NumStrs = {"  1 ", " 1.45  ", "-100", "5e+04 "};
+string[] NumStrs = { "  1 ", " 1.45  ", "-100", "5e+04 " };
 
 int testint;
 float testfloat;
@@ -9,9 +9,29 @@ bool result;
 
 // TODO: The Parse method attempts to parse a string to a number and
 // throws an exception if the parse is unsuccessful
-foreach (string str in NumStrs) {
-
-}
+// foreach (string str in NumStrs)
+// {
+//     try
+//     {
+//         testfloat = float.Parse(str);
+//         Console.WriteLine($"Parsed {str} to {testfloat} float");
+//         testint = int.Parse(str);
+//         Console.WriteLine($"Parsed {str} to {testint} int");
+//     }
+//     catch (FormatException e)
+//     {
+//         Console.WriteLine($"Unable to parse '{str}' : '{e.Message}'");
+//     }
+// }
 
 // TODO: The TryParse method returns 'true' if the parse is successful
 
+result = float.TryParse(NumStrs[0], out testfloat);
+Console.WriteLine($"TryParse result: {result} -- '{NumStrs[0]}' : {testfloat}");
+
+result = float.TryParse(NumStrs[1], out testfloat);
+Console.WriteLine($"TryParse result: {result} -- '{NumStrs[1]}' : {testfloat}");
+result = float.TryParse(NumStrs[2], out testfloat);
+Console.WriteLine($"TryParse result: {result} -- '{NumStrs[2]}' : {testfloat}");
+result = float.TryParse(NumStrs[3], out testfloat);
+Console.WriteLine($"TryParse result: {result} -- '{NumStrs[3]}' : {testfloat}");
